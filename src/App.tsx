@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useSavedState } from "./hooks/useSavedTodo";
+import { useSavedState as useSavesTodo } from "./hooks/useSavedTodo";
 import {
   default as TodoItem,
   default as TodoItemProps,
 } from "./Types/TodoItems";
 
 const App: React.FunctionComponent = () => {
-  const [todos, setTodos] = useSavedState([], "todos");
+  const [todos, setTodos] = useSavesTodo([], "todos");
   const [newTodo, setNewTodo] = useState<TodoItemProps>({
     id: todos.length > 0 ? todos.length : -1,
     text: "",
